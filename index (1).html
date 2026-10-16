@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aleksandar Angelov</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF2F5;--surface:#fff;--ink:#12202B;--mute:#53636F;--line:#CFD8DF;--accent:#00786A;--term:#0D1A22;--tink:#CDEBE3;--tacc:#F0B429;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0E171D;--surface:#15222B;--ink:#E6EEF2;--mute:#9BADB8;--line:#263640;--accent:#4FD1B8;--term:#070E12}}
+:root[data-theme="dark"]{--bg:#0E171D;--surface:#15222B;--ink:#E6EEF2;--mute:#9BADB8;--line:#263640;--accent:#4FD1B8;--term:#070E12}
+html{scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 "Inter",system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--tacc);outline-offset:2px}
+h1,h2,h3{font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.1;margin:0}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px}
+
+.hero{padding:72px 0 56px}
+.hero h1{font-size:clamp(40px,8.5vw,80px);font-weight:800;letter-spacing:-.03em;text-wrap:balance}
+.hero p{max-width:60ch;font-size:20px;color:var(--mute);margin:20px 0 32px}
+.term{background:var(--term);color:var(--tink);border-radius:10px;font:400 14px/1.55 "JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;overflow:hidden}
+.tbar{display:flex;flex-wrap:wrap;gap:8px;padding:10px 14px;border-bottom:1px solid #ffffff1f}
+.tbar button{font:inherit;background:none;border:1px solid #ffffff33;color:var(--tink);border-radius:6px;padding:2px 10px;cursor:pointer}
+.tbar button:hover{border-color:var(--tacc);color:var(--tacc)}
+#out{height:230px;overflow-y:auto;padding:12px 14px;white-space:pre-wrap;word-break:break-word}
+#out .cmd{color:var(--tacc)}
+.tin{display:flex;gap:8px;padding:10px 14px;border-top:1px solid #ffffff1f}
+.tin span{color:var(--tacc)}
+.tin input{flex:1;min-width:0;background:none;border:0;color:var(--tink);font:inherit;outline-offset:6px}
+section{padding:48px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:190px 1fr;gap:16px 32px}
+section>h2{font-size:28px;font-weight:700}
+.entry+.entry{margin-top:28px}
+main>section:first-child{border-top:0}
+.row{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 16px}
+.row h3{font-size:21px;font-weight:700}
+.when{color:var(--mute);font-size:15px}
+.org{color:var(--mute);margin:2px 0 6px}
+ul{margin:8px 0 0;padding-left:20px}
+li+li{margin-top:4px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.tags span{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:1px 12px;font-size:14px}
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.cert{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px 16px}
+.cert b{display:block;font-family:"Inter",sans-serif;font-size:18px}
+.cert small{color:var(--mute);font-size:15px}
+.links{display:flex;flex-wrap:wrap;gap:12px 24px;font-weight:600}
+footer{padding:32px 0 48px;color:var(--mute);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:700px){section{grid-template-columns:1fr}.hero{padding-top:48px}}
+</style>
+</head>
+<body>
+
+
+<main class="wrap">
+<div class="hero" id="about">
+<h1>Aleksandar Angelov</h1>
+<p>I'm a computer science sophomore at the University of Maryland, College Park, with a networking and cybersecurity background from Harford Technical High School. I like building things people can use. Ask the terminal to learn more.</p>
+<div class="term" role="region" aria-label="Interactive terminal">
+<div class="tbar" id="chips"><button>help</button><button>about</button><button>education</button><button>certs</button><button>projects</button><button>contact</button></div>
+<div id="out" aria-live="polite"></div>
+<div class="tin"><span>&gt;</span><input id="in" type="text" aria-label="Terminal command" placeholder="type a command, e.g. projects" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
+</div>
+</div>
+
+
+<section id="experience"><h2>Experience</h2><div>
+<div class="entry"><div class="row"><h3>Corporate Relations Assistant</h3><span class="when">Jan 2026 – present</span></div>
+<div class="org">Brendan Iribe Center for Computer Science and Engineering · Department of CS External Relations Team, College Park, MD</div>
+<ul><li>Created graphic designs for weekly events, set up event tabling, and provided administrative support.</li><li>Worked with the External Relations Team to help plan events such as the CS Career Fairs and Maryland Day.</li></ul></div>
+<div class="entry"><div class="row"><h3>FIRE: The First-Year Innovation &amp; Research Experience</h3><span class="when">Sep 2025 – present</span></div>
+<div class="org">Computing and Society Stream &amp; FIRE Leadership Council · College Park, MD</div>
+<ul><li>Conducted research and analyzed data in R on AI privacy and security in facial recognition technology, including how accurate these technologies are.</li></ul></div>
+<div class="entry"><div class="row"><h3>Housekeeping Associate (part-time)</h3><span class="when">Oct – Dec 2025</span></div>
+<div class="org">Adele H. Stamp Student Union · College Park, MD</div></div>
+
+<div class="entry"><div class="row"><h3>Summer Camp Counselor (volunteer)</h3><span class="when">Jun – Jul 2024</span></div>
+<div class="org">LASOS, Inc. · Bel Air, MD</div>
+<ul><li>Assisted classroom teachers with lesson planning and preparing learning materials for daily instruction.</li></ul></div>
+</div></section>
+
+<section id="projects"><h2>Projects &amp; Competitions</h2><div>
+<div class="entry"><div class="row"><h3><a href="https://knightener.github.io/planetdorm/">PlazaDorm</a></h3><span class="when">2026</span></div>
+<div class="org">Founder and Lead Developer</div>
+<ul><li>Designed and built an interactive web platform where UMD students view and leave ratings on university dormitories.</li><li>Created an extensive content moderation policy, implemented user authentication, and planned the initial launch.</li></ul>
+<div class="tags"><span>Supabase</span><span>GitHub Pages</span></div></div>
+<div class="entry"><div class="row"><h3>Alek Weather</h3><span class="when">Summer 2026</span></div>
+<ul><li>Independent weather app that uses the free NOAA API to show live conditions overhead, overriding the current conditions with live radar data.</li></ul>
+<div class="tags"><span>React</span><span>NOAA API</span></div></div>
+<div class="entry"><div class="row"><h3>AFA CyberPatriot National Youth Cyber Defense Competition</h3><span class="when">Seasons 16 &amp; 17</span></div>
+<div class="org">Team Captain · Bel Air, MD</div>
+<ul><li>Led a team of six to the semifinals, directing strategy, role coverage, and vulnerability remediation under time limits.</li><li>Hardened operating systems, analyzed HTML/JS files and sites, and analyzed MITRE CVEs.</li></ul></div>
+</div></section>
+
+<section id="credentials"><h2>Credentials</h2><div>
+<div class="certs">
+<div class="cert"><b>CompTIA Security+</b><small>Certification</small></div>
+<div class="cert"><b>Cisco CCNA coursework</b><small>Cisco Networking Academy · ITN, SRWE, ENSA</small></div>
+
+
+<div class="cert"><b>CompTIA ITF+</b><small>IT Fundamentals</small></div>
+<div class="cert"><b><a href="https://drive.google.com/file/d/1Qw25-8ij5RKFTvQH9Nn3O10JnfTJUFl7/view?usp=sharing">NDG Linux Unhatched</a></b><small>Linux Fundamentals</small></div>
+</div>
+<p style="margin:16px 0 0"><a href="https://www.credly.com/users/aleksandar-angelov.90905fc3">View my verified badges on Credly</a></p>
+<div class="entry" style="margin-top:32px"><div class="row"><h3>University of Maryland, College Park</h3><span class="when">Sep 2025 – May 2029 (expected)</span></div><div class="org">B.S. Computer Science · GPA 3.27</div><ul><li>Completed: Object-Oriented Programming I &amp; II (CMSC131, CMSC132)</li><li>In progress: Computer Systems (CMSC216), Discrete Structures (CMSC250)</li></ul></div>
+<div class="entry"><div class="row"><h3>Harford Technical High School</h3><span class="when">May 2025</span></div><div class="org">IT Networking Program (CTE) · GPA 4.0</div><ul><li>Four-year honor roll, 10 AP classes completed.</li><li>President of the Engineering Club for three years.</li></ul></div>
+<div class="entry"><div class="row"><h3>Skills</h3></div><div class="tags"><span>Java</span><span>JavaScript</span><span>R</span><span>C</span><span>HTML</span><span>Git</span><span>Routing and switching</span><span>VLANs</span><span>Cisco IOS</span><span>Packet Tracer</span><span>Wireshark</span><span>System hardening</span><span>Linux</span><span>Windows</span><span>Microsoft 365</span><span>Supabase</span><span>English (native)</span><span>Bulgarian (native)</span></div></div>
+</div></section>
+
+<section id="contact"><h2>Contact</h2><div>
+<p style="margin-top:0">The fastest way to reach me is email.</p>
+<div class="links"><a href="mailto:aleksandarangelov.edu@gmail.com">aleksandarangelov.edu@gmail.com</a><a href="https://www.linkedin.com/in/aleksandar-angelov-9421b92a6">LinkedIn</a><a href="https://github.com/aleksandarangelov06/">GitHub</a><a href="https://www.credly.com/users/aleksandar-angelov.90905fc3">Credly</a><a href="https://drive.google.com/open?id=1KrwTPNpX67iVZvFi4nzIN5kXVb-hINLLifowetG4ns8">Full resume</a></div>
+</div></section>
+</main>
+<footer><div class="wrap">Aleksandar Angelov</div></footer>
+
+<script>
+(function(){
+var out=document.getElementById('out'),inp=document.getElementById('in');if(!out||!inp)return;
+var C={
+help:'Commands: about, education, certs, projects, contact, clear',
+about:'Aleksandar "Alek" Angelov. CS sophomore at the University of Maryland, College Park. Networking and cybersecurity background from Harford Technical High School.',
+education:'University of Maryland, College Park: B.S. Computer Science, expected May 2029 (GPA 3.27)\nHarford Technical High School: IT Networking Program (CTE), May 2025',
+certs:'CompTIA Security+\nCCNA coursework: ITN, SRWE, and ENSA\nCompTIA ITF+\nNDG Linux Unhatched',
+projects:'PlazaDorm: dorm rating platform for UMD students (founder and lead developer)\nAlek Weather: weather app using the NOAA API and live radar data',
+contact:'aleksandarangelov.edu@gmail.com\nLinkedIn: linkedin.com/in/aleksandar-angelov-9421b92a6\nGitHub: github.com/aleksandarangelov06'
+};
+function print(t,c){var d=document.createElement('div');if(c)d.className=c;d.textContent=t;out.appendChild(d);out.scrollTop=out.scrollHeight}
+function run(v){
+v=v.trim().toLowerCase();if(!v)return;
+print('> '+v,'cmd');
+if(v==='clear'){out.textContent='';return}
+print(Object.prototype.hasOwnProperty.call(C,v)?C[v]:'Unknown command "'+v+'". Type help to see what is available.');
+}
+inp.addEventListener('keydown',function(e){if(e.key==='Enter'){run(inp.value);inp.value=''}});
+document.getElementById('chips').addEventListener('click',function(e){if(e.target.tagName==='BUTTON')run(e.target.textContent)});
+print('Welcome. Type help or tap a command above.');
+})();
+</script>
+</body>
+</html>
